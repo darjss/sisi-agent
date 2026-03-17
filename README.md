@@ -1,82 +1,69 @@
 # sisi-agent
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Router, Elysia, and more.
+`sisi-agent` is an AI assistant project for **NUM**. It connects the university portal APIs to LLM tools through MCP, with a Chrome extension as the main client and a local MCP server exposing SISI data.
 
-## Features
+## Structure
 
-- **TypeScript** - For type safety and improved developer experience
-- **TanStack Router** - File-based routing with full type safety
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **shadcn/ui** - Reusable UI components
-- **Elysia** - Type-safe, high-performance framework
-- **Bun** - Runtime environment
-- **Drizzle** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Turborepo** - Optimized monorepo build system
-- **Biome** - Linting and formatting
-- **Oxlint** - Oxlint + Oxfmt (linting & formatting)
+- `apps/extension` - Chrome extension client
+- `apps/server` - AI server
+- `apps/web` - experimental web UI
+- `packages/mcp` - local SISI MCP server
+- `packages/db` - database setup
+- `report/midway-report-latex` - thesis report source and PDF
 
-## Getting Started
-
-First, install the dependencies:
+## Quick Start
 
 ```bash
 bun install
-```
-
-## Database Setup
-
-This project uses PostgreSQL with Drizzle ORM.
-
-1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/server/.env` file with your PostgreSQL connection details.
-
-3. Apply the schema to your database:
-
-```bash
-bun run db:push
-```
-
-Then, run the development server:
-
-```bash
 bun run dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) in your browser to see the web application.
-The API is running at [http://localhost:3000](http://localhost:3000).
+Useful commands:
 
-## Deployment (Cloudflare via Alchemy)
-
-- Dev: cd apps/web && bun run alchemy dev
-- Deploy: cd apps/web && bun run deploy
-- Destroy: cd apps/web && bun run destroy
-
-For more details, see the guide on [Deploying to Cloudflare with Alchemy](https://www.better-t-stack.dev/docs/guides/cloudflare-alchemy).
-
-## Git Hooks and Formatting
-
-- Format and lint fix: `bun run check`
-
-## Project Structure
-
-```
-sisi-agent/
-├── apps/
-│   ├── web/         # Frontend application (React + TanStack Router)
-│   └── server/      # Backend API (Elysia)
-├── packages/
-│   ├── api/         # API layer / business logic
+```bash
+bun run check
+bun run check-types
+bun run db:push
+bun run db:studio
 ```
 
-## Available Scripts
+## Start The MCP Server
 
-- `bun run dev`: Start all applications in development mode
-- `bun run build`: Build all applications
-- `bun run dev:web`: Start only the web application
-- `bun run dev:server`: Start only the server
-- `bun run check-types`: Check TypeScript types across all apps
-- `bun run db:push`: Push schema changes to database
-- `bun run db:studio`: Open database studio UI
-- `bun run check`: Run Biome formatting and linting
-- `bun run check`: Run Oxlint and Oxfmt
+The local MCP server runs on `http://127.0.0.1:3901/mcp` by default.
+
+```bash
+cd packages/mcp
+bun run dev
+```
+
+Optional health check:
+
+```bash
+curl http://127.0.0.1:3901/health
+```
+
+## Add It To An Agent Client
+
+For agent clients that support HTTP MCP servers, add this to their MCP config:
+
+```json
+{
+  "mcpServers": {
+    "sisi-agent": {
+      "url": "http://127.0.0.1:3901/mcp"
+    }
+  }
+}
+```
+
+Then start the MCP server and connect your agent client to test the read-only SISI tools.
+
+## Report
+
+- Source: `report/midway-report-latex/main.tex`
+- PDF: `report/midway-report-latex/main.pdf`
+
+## Notes
+
+- This repo uses Bun workspaces and Turborepo.
+- The two large sample reference PDFs in `report/` are ignored by git.
