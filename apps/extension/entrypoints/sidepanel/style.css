@@ -1,0 +1,45 @@
+@import "@sisi-agent/ui/styles.css";
+@source "./**/*.{ts,tsx}";
+@source "../../components/**/*.{ts,tsx}";
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow: hidden;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+#root {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+}
+
+.sidepanel-root {
+  display: flex;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.sidepanel-root textarea {
+  min-height: 96px;
+}
