@@ -18,22 +18,38 @@ bun install
 bun run dev
 ```
 
+`bun run dev` starts:
+
+- the AI API server
+- the Chrome extension dev server
+- the local MCP server
+
 Useful commands:
 
 ```bash
 bun run check
 bun run check-types
+bun run dev:extension
+bun run dev:server
+bun run dev:mcp
 bun run db:push
 bun run db:studio
 ```
+
+## Run The Chrome Extension
+
+```bash
+bun run dev:extension
+```
+
+This starts the WXT development server for the Chrome extension on port `5555`.
 
 ## Start The MCP Server
 
 The local MCP server runs on `http://127.0.0.1:3901/mcp` by default.
 
 ```bash
-cd packages/mcp
-bun run dev
+bun run dev:mcp
 ```
 
 Optional health check:
