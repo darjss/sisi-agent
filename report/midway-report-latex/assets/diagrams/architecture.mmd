@@ -1,0 +1,23 @@
+flowchart LR
+  student([Оюутан])
+  teacher([Багш])
+  ext[Chrome extension<br/>үндсэн хэрэглэгчийн клиент]
+  ai[AI сервер<br/>Elysia + AI SDK]
+  smcp[SISI оюутны MCP сервер]
+  sisi[(SISI Student Portal API)]
+  tmcp[Багшийн порталын MCP сервер<br/>төлөвлөсөн]
+  tportal[Teacher Portal API<br/>төлөвлөсөн]
+  external[Бусад MCP үйлчилгээ<br/>төлөвлөсөн]
+
+  student --> ext
+  teacher --> ext
+  ext <--> ai
+  ext --> smcp
+  ai <--> smcp
+  smcp <--> sisi
+  ai -. өргөтгөл .-> tmcp
+  ai -. өргөтгөл .-> external
+  tmcp -.-> tportal
+
+  classDef planned fill:#fff4d6,stroke:#d39d12,color:#000;
+  class tmcp,tportal,external planned;

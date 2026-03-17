@@ -1,0 +1,7 @@
+info:
+  name: Student Card
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit

@@ -1,0 +1,17 @@
+info:
+  name: Account Login (GET)
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{auth_base}}/oauth2/account/login?ReturnUrl={{returnUrl}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Observed in redirect chain.

@@ -1,0 +1,20 @@
+info:
+  name: Student Balance
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/BalanceAccount/StudBalance?sih={{sih}}&curid={{curId}}&year={{year}}&sem={{sem}}"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/payinfo."

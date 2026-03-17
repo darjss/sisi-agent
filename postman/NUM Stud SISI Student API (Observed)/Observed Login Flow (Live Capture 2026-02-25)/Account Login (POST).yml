@@ -1,0 +1,17 @@
+info:
+  name: Account Login (POST)
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{auth_base}}/oauth2/account/login?ReturnUrl={{returnUrl}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Observed in redirect chain. Returns 302 during normal flow.

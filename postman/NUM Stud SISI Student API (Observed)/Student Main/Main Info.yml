@@ -1,0 +1,20 @@
+info:
+  name: Main Info
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/main/info?sih={{sih}}"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Observed bootstrap request.

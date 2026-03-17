@@ -1,0 +1,189 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{iftex}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T2A]{fontenc}
+  \usepackage[english,russian]{babel}
+\else
+  \usepackage{fontspec}
+  \setmainfont{FreeSerif}
+  \setsansfont{DejaVu Sans}
+  \setmonofont{DejaVu Sans Mono}
+\fi
+
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
+  pdftitle={SISI агентын завсрын тайлан},
+  pdfauthor={Авиддарам Базаррагчаа}
+}
+
+\setstretch{1.25}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.2em}
+\setlist[itemize]{leftmargin=2em}
+\setlist[enumerate]{leftmargin=2em}
+\captionsetup{font=small,labelfont=bf}
+
+\titleformat{\chapter}[hang]{\bfseries\Large}{\thechapter.}{0.7em}{}
+\titleformat{\section}[hang]{\bfseries\large}{\thesection}{0.7em}{}
+\titleformat{\subsection}[hang]{\bfseries\normalsize}{\thesubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\  fancyhead[L]{SISi системийн ухаалаг агент}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\newcommand{\UniversityName}{Монгол Улсын Их Сургууль}
+\newcommand{\SchoolName}{Мэдээллийн технологи, электроникийн сургууль}
+\newcommand{\DepartmentName}{Мэдээлэл, компьютерын ухааны тэнхим}
+\newcommand{\ProgramName}{Мэдээллийн систем}
+\newcommand{\StudentName}{Авиддарам Базаррагчаа}
+\newcommand{\StudentCode}{21B1NUM1186}
+\newcommand{\AdvisorName}{О.Билгүүн}
+\newcommand{\ReportTitle}{SISi системийн ухаалаг агент: оюутны порталд суурилсан хиймэл оюуны туслах системийн загварчлал ба завсрын хэрэгжилт}
+\newcommand{\ReportTitleEn}{Intelligent Agent for the SISi System: Design and Midway Implementation of an AI Assistant for a Student Portal}
+\newcommand{\ReportCity}{Улаанбаатар}
+\newcommand{\ReportYear}{2026}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+  \begin{center}
+    {\large \UniversityName \par}
+    \vspace{0.2cm}
+    {\large \SchoolName \par}
+    \vspace{0.2cm}
+    {\large \DepartmentName \par}
+
+    \vfill
+
+    {\Large \StudentName \par}
+    \vspace{1cm}
+
+    {\bfseries\LARGE \ReportTitle \par}
+    \vspace{0.6cm}
+    {\large (\ReportTitleEn) \par}
+    \vspace{0.8cm}
+
+    {\large \ProgramName \par}
+    \vspace{0.3cm}
+    {\large Бакалаврын судалгааны ажлын завсрын тайлан \par}
+
+    \vfill
+
+    {\large \ReportCity \par}
+    {\large \ReportYear\ оны хаврын улирал \par}
+  \end{center}
+\end{titlepage}
+
+\begin{titlepage}
+  \begin{center}
+    {\large \UniversityName \par}
+    \vspace{0.2cm}
+    {\large \SchoolName \par}
+    \vspace{0.2cm}
+    {\large \DepartmentName \par}
+
+    \vfill
+
+    {\bfseries\LARGE \ReportTitle \par}
+    \vspace{0.6cm}
+    {\large \ProgramName \par}
+    \vspace{0.4cm}
+    {\large Бакалаврын судалгааны ажлын завсрын тайлан \par}
+
+    \vfill
+
+    \begin{tabular}{p{5cm}p{8cm}}
+      Удирдагч: & \AdvisorName \\
+      Гүйцэтгэсэн: & \StudentName\ (\StudentCode) \\
+    \end{tabular}
+
+    \vfill
+
+    {\large \ReportCity \par}
+    {\large \ReportYear\ оны 3 дугаар сар \par}
+  \end{center}
+\end{titlepage}
+
+\cleardoublepage
+\thispagestyle{empty}
+\begin{center}
+  {\Large Зохиогчийн баталгаа}
+\end{center}
+\vspace{0.8cm}
+
+Миний бие \StudentName\ нь ``\ReportTitle'' сэдэвт бакалаврын судалгааны ажлын завсрын тайланг өөрийн гүйцэтгэсэн ажлын явц, одоогийн хэрэгжилт, цаашдын төлөвлөгөөнд тулгуурлан боловсруулснаа баталж байна. Энэхүү тайланд ашигласан эх сурвалж, онолын материал, системийн тайлбар, диаграмм болон үнэлгээний санааг холбогдох хэсгүүдэд дурдсан болно.
+
+\vspace{1.4cm}
+\noindent Гарын үсэг: \rule{6cm}{0.4pt}
+
+\vspace{0.8cm}
+\noindent Огноо: \rule{6cm}{0.4pt}
+
+\cleardoublepage
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter*{УДИРТГАЛ}
+\addcontentsline{toc}{chapter}{УДИРТГАЛ}
+Энэхүү тайлан SISi системийн ухаалаг агент төслийн судалгааны үр дүн, системийн шаардлага, архитектурын шийдэл болон одоогийн хэрэгжилтийн явцыг дүгнэн хүргэж байна. Төслийн зорилго нь SISI портал болон бусад холбогдох системүүдийн өгөгдлийг байгалийн хэлний интерфейсээр дамжуулан хэрэглэгчийн хүсэлтийг бодит үйлдэл болгон хувиргах хиймэл оюуны туслах систем бий болгоход оршино.
+
+Одоогийн байдлаар төслийн хүрээнд Chrome extension-д суурилсан хэрэглэгчийн оролцоо, хиймэл оюуны сервер, SISI системийн API-г \textit{Model Context Protocol} (MCP) хэлбэрээр нэгтгэсэн локал интеграцын эхний хувилбар боловсруулагдаад байна. Мөн хуваарь, дүн, санхүү, мэдэгдэл, оюутны баримт бичгийн мэдээлэл зэрэг олон домэйнд зориулсан MCP хэрэгслүүд тодорхойлогдсон. Дараагийн шатанд бусад MCP серверүүдийг ерөнхий байдлаар холбох, Chrome extension-оор одоогийн сессийн access token-ийг дахин нэвтрэлт шаардахгүй ашиглах, багшийн порталын API-г нэмж Excel файлаас дүн оруулах ажиллагааг автоматжуулах зэрэг ажлууд үлдэж байна.
+
+\input{sections/01-goal}
+\input{sections/02-rationale}
+\input{sections/03-research}
+\input{sections/04-analysis}
+\input{sections/05-design}
+\input{sections/06-tech-stack}
+\input{sections/07-progress}
+
+\chapter*{ДҮГНЭЛТ}
+\addcontentsline{toc}{chapter}{ДҮГНЭЛТ}
+SISi системийн ухаалаг агент төсөл нь их сургуулийн дотоод порталын мэдээлэл болон цаашдын MCP интеграцуудыг байгалийн хэлний интерфейстэй холбох архитектурын чадамжийг завсрын хэрэгжилтээр баталгаажуулж байна. Судалгааны дүгнэлтээс үзэхэд энэ төрлийн системд зөвхөн хариу үүсгэдэг чатбот бус, бодит өгөгдөлтэй холбогдох найдвартай интерфейс, стандартчилсан хэрэгсэл, аюулгүй сессийн удирдлага, унших болон бичих үйлдлийг ялгасан зохиомж шаардлагатай байна.
+
+Төслийн одоогийн шатанд хамгийн чухал ахиц нь SISI API-г MCP хэлбэрт оруулж, оюутны мэдээллийн хэд хэдэн үндсэн домэйнийг унших боломжтой болгосон явдал юм. Энэ нь цаашид дурын MCP интеграц нэмэх, олон алхамт команд гүйцэтгэх, экспорт болон баталгаажуулалт шаардсан үйлдлийг аюулгүй хэрэгжүүлэх, мөн багшийн порталын автоматжуулалтын урсгал нэмэх суурь болж өгнө.
+
+Цаашдын ажлаар загварын tool-calling урсгалыг бүрэн холбох, Chrome extension-ийн access token суурьтай session bootstrap-ийг тогтворжуулах, шинэ MCP серверүүд болон багшийн порталын API-г нэгтгэх, mutation төрлийн үйлдлийн зөвшөөрлийн давхарга, туршилт болон хэрэглэгчийн үнэлгээг нэмэх замаар энэхүү төслийг төгсгөлийн шатанд бодит хэрэглээнд ойртсон дипломын систем болгон хөгжүүлнэ.
+
+\cleardoublepage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\input{sections/appendix-usecases}
+\input{sections/glossary}
+
+\end{document}

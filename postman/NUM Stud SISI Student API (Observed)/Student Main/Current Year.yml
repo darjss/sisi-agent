@@ -1,0 +1,20 @@
+info:
+  name: Current Year
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/main/currentyr"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/payinfo."

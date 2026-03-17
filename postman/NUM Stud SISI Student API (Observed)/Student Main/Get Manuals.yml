@@ -1,0 +1,17 @@
+info:
+  name: Get Manuals
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{support2_base}}/stud/main/getManuals"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/manual."

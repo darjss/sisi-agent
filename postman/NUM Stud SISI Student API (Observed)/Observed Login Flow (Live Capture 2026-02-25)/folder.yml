@@ -1,0 +1,11 @@
+info:
+  name: Observed Login Flow (Live Capture 2026-02-25)
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit
+
+docs:
+  content: Captured from real login redirect flow. These endpoints are mostly auth/session redirects and should be used carefully.
+  type: text/markdown

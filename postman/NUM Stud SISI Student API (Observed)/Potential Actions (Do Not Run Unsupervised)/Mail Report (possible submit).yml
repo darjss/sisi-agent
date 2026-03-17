@@ -1,0 +1,17 @@
+info:
+  name: Mail Report (possible submit)
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{tree_base}}/comnity/Mail/Report"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Potential submit/report endpoint from JS bundle string extraction.

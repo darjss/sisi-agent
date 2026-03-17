@@ -1,0 +1,11 @@
+info:
+  name: Potential Actions (Do Not Run Unsupervised)
+  type: folder
+  seq: 12
+
+request:
+  auth: inherit
+
+docs:
+  content: Potential mutating endpoints discovered by bundle string inspection or naming patterns. These were not intentionally triggered in this pass.
+  type: text/markdown

@@ -1,0 +1,1065 @@
+{
+  "info": {
+    "name": "NUM Stud SISI Student API (Observed)",
+    "description": "Student-account-only API collection captured from https://stud-sisi.num.edu.mn. This collection avoids active submission/upload flows. Use with caution on production student data.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "sih",
+      "value": ""
+    },
+    {
+      "key": "curId",
+      "value": ""
+    },
+    {
+      "key": "year",
+      "value": "2025"
+    },
+    {
+      "key": "sem",
+      "value": "4"
+    },
+    {
+      "key": "unitId",
+      "value": "1001000"
+    },
+    {
+      "key": "empId",
+      "value": "0"
+    },
+    {
+      "key": "roomId",
+      "value": "0"
+    },
+    {
+      "key": "courseId",
+      "value": "0"
+    },
+    {
+      "key": "courseid",
+      "value": "0"
+    },
+    {
+      "key": "acid",
+      "value": ""
+    },
+    {
+      "key": "daalID",
+      "value": ""
+    },
+    {
+      "key": "session",
+      "value": ""
+    },
+    {
+      "key": "support2_base",
+      "value": "https://support2.num.edu.mn/prod/api"
+    },
+    {
+      "key": "tree_base",
+      "value": "https://tree.num.edu.mn"
+    },
+    {
+      "key": "phost_base",
+      "value": "https://phost.num.edu.mn"
+    },
+    {
+      "key": "auth_base",
+      "value": "https://auth.num.edu.mn"
+    },
+    {
+      "key": "teach_sisi_base",
+      "value": "https://teach-sisi.num.edu.mn/api"
+    },
+    {
+      "key": "stud_ejournal_base",
+      "value": "https://sisi.num.edu.mn/stud-ejournal"
+    },
+    {
+      "key": "stud_api_base",
+      "value": "https://stud-api.num.edu.mn"
+    },
+    {
+      "key": "authType",
+      "value": ""
+    },
+    {
+      "key": "returnUrl",
+      "value": ""
+    },
+    {
+      "key": "clientId",
+      "value": "20d377504a8146019cd7fcc424fbbaab"
+    },
+    {
+      "key": "redirectUri",
+      "value": "https://stud-sisi.num.edu.mn/signin.html"
+    },
+    {
+      "key": "state",
+      "value": "my-nonce"
+    },
+    {
+      "key": "scope",
+      "value": "bio notes"
+    },
+    {
+      "key": "responseType",
+      "value": "code"
+    },
+    {
+      "key": "username",
+      "value": ""
+    },
+    {
+      "key": "password",
+      "value": ""
+    },
+    {
+      "key": "passwordMD5",
+      "value": ""
+    },
+    {
+      "key": "__RequestVerificationToken",
+      "value": ""
+    },
+    {
+      "key": "oauthAuthorizeUrl",
+      "value": ""
+    },
+    {
+      "key": "oauthRedirectLocation",
+      "value": ""
+    },
+    {
+      "key": "tokenType",
+      "value": "Bearer"
+    },
+    {
+      "key": "oauthScope",
+      "value": "bio notes"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth and Profile",
+      "item": [
+        {
+          "name": "Auth Me",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/resource/Me",
+            "description": "Observed during app bootstrap."
+          }
+        },
+        {
+          "name": "Student Photo AccessByMe",
+          "request": {
+            "method": "GET",
+            "url": "{{phost_base}}/students/AccessByMe",
+            "description": "Observed on home and studentcard contexts. Returns image/jpeg."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Observed Login Flow (Live Capture 2026-02-25)",
+      "description": "Captured from real login redirect flow. These endpoints are mostly auth/session redirects and should be used carefully.",
+      "item": [
+        {
+          "name": "Auth Step 1 (GET)",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/oauth2/account/auth",
+            "description": "Observed first auth page load before credential submit."
+          }
+        },
+        {
+          "name": "Auth Step 1 (POST)",
+          "request": {
+            "method": "POST",
+            "url": "{{auth_base}}/oauth2/account/auth",
+            "description": "Observed credential submit/transition step. Returns 302 during normal flow."
+          }
+        },
+        {
+          "name": "Auth Step 2 (GET)",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/oauth2/account/auth2?auth_type={{authType}}",
+            "description": "Observed second auth page."
+          }
+        },
+        {
+          "name": "Auth Step 2 (POST)",
+          "request": {
+            "method": "POST",
+            "url": "{{auth_base}}/oauth2/account/auth2",
+            "description": "Observed auth second-step submit. Returns 302 during normal flow."
+          }
+        },
+        {
+          "name": "Account Login (GET)",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/oauth2/account/login?ReturnUrl={{returnUrl}}",
+            "description": "Observed in redirect chain."
+          }
+        },
+        {
+          "name": "Account Login (POST)",
+          "request": {
+            "method": "POST",
+            "url": "{{auth_base}}/oauth2/account/login?ReturnUrl={{returnUrl}}",
+            "description": "Observed in redirect chain. Returns 302 during normal flow."
+          }
+        },
+        {
+          "name": "OAuth Authorize",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/oauth2/OAuth/Authorize?client_id={{clientId}}&redirect_uri={{redirectUri}}&state={{state}}&scope={{scope}}&response_type={{responseType}}",
+            "description": "Observed OAuth authorize redirect call."
+          }
+        },
+        {
+          "name": "Direct Main Info (stud-api host)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{stud_api_base}}/main/info?sih={{sih}}",
+            "description": "Observed from live session bootstrap on stud-sisi frontend."
+          }
+        },
+        {
+          "name": "Direct Menu List (stud-api host)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{stud_api_base}}/main/menulist?sih={{sih}}",
+            "description": "Observed from live session bootstrap on stud-sisi frontend."
+          }
+        }
+      ]
+    },
+    {
+      "name": "API Login + Token Bootstrap (Automated)",
+      "description": "Programmatic auth flow: fetch CSRF token, submit login form with double-MD5 password, obtain OAuth access token from redirect fragment, call /resource/Me to extract sih/priv_hash and bootstrap vars.",
+      "item": [
+        {
+          "name": "1) Login Page (Fetch CSRF)",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/oauth2/account/login?ReturnUrl=/oauth2/OAuth/Authorize?client_id={{clientId}}%26redirect_uri={{redirectUri}}%26state={{state}}%26scope={{scope}}%26response_type={{responseType}}",
+            "description": "Gets anti-forgery token (__RequestVerificationToken)."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const html = pm.response.text();",
+                  "const m = html.match(/name=\"__RequestVerificationToken\"\\s+type=\"hidden\"\\s+value=\"([^\"]+)\"/i);",
+                  "if (m && m[1]) { pm.collectionVariables.set('__RequestVerificationToken', m[1]); }",
+                  "const returnUrl = '/oauth2/OAuth/Authorize?client_id=' + encodeURIComponent(pm.collectionVariables.get('clientId')) + '&redirect_uri=' + encodeURIComponent(pm.collectionVariables.get('redirectUri')) + '&state=' + encodeURIComponent(pm.collectionVariables.get('state')) + '&scope=' + encodeURIComponent(pm.collectionVariables.get('scope')) + '&response_type=' + encodeURIComponent(pm.collectionVariables.get('responseType'));",
+                  "pm.collectionVariables.set('returnUrl', returnUrl);",
+                  "pm.test('CSRF token captured', function(){ pm.expect(pm.collectionVariables.get('__RequestVerificationToken')).to.be.ok; });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2) Login Submit (Form POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "__RequestVerificationToken",
+                  "value": "{{__RequestVerificationToken}}",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text"
+                },
+                {
+                  "key": "passwordMD5",
+                  "value": "{{passwordMD5}}",
+                  "type": "text"
+                },
+                {
+                  "key": "submit.Signin",
+                  "value": "Нэвтрэх",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{auth_base}}/oauth2/account/login?ReturnUrl={{returnUrl}}",
+            "description": "Submits credentials. Requires passwordMD5 = md5(md5(password))."
+          },
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const pwd = pm.collectionVariables.get('password') || '';",
+                  "const md5once = CryptoJS.MD5(pwd).toString().toLowerCase();",
+                  "const md5twice = CryptoJS.MD5(md5once).toString().toLowerCase();",
+                  "pm.collectionVariables.set('passwordMD5', md5twice);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Login returns redirect', function(){ pm.expect(pm.response.code).to.be.oneOf([302,303]); });",
+                  "const loc = pm.response.headers.get('Location') || pm.response.headers.get('location') || '';",
+                  "if (loc) pm.collectionVariables.set('oauthAuthorizeUrl', loc);",
+                  "pm.test('Captured authorize redirect location', function(){ pm.expect(pm.collectionVariables.get('oauthAuthorizeUrl')).to.be.ok; });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3) OAuth Authorize (Capture access token)",
+          "request": {
+            "method": "GET",
+            "url": "{{oauthAuthorizeUrl}}",
+            "description": "Uses login session cookies. Captures access token from redirect fragment in Location header."
+          },
+          "protocolProfileBehavior": {
+            "followRedirects": false
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const loc = pm.response.headers.get('Location') || pm.response.headers.get('location') || '';",
+                  "if (loc) pm.collectionVariables.set('oauthRedirectLocation', loc);",
+                  "const hash = loc.includes('#') ? loc.split('#')[1] : '';",
+                  "const params = new URLSearchParams(hash);",
+                  "const accessToken = params.get('access_token');",
+                  "if (accessToken) {",
+                  "  pm.collectionVariables.set('token', accessToken);",
+                  "  pm.collectionVariables.set('authToken', accessToken);",
+                  "  pm.collectionVariables.set('tokenType', params.get('token_type') || 'Bearer');",
+                  "  pm.collectionVariables.set('expiresInSeconds', params.get('expires_in') || '');",
+                  "}",
+                  "pm.test('Access token captured from redirect fragment', function(){ pm.expect(pm.collectionVariables.get('token')).to.be.ok; });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4) Resource Me -> Extract SIH",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/resource/Me",
+            "description": "Requires Bearer token. Extracts priv_hash as sih and other bootstrap vars."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const arr = pm.response.json();",
+                  "if (Array.isArray(arr)) {",
+                  "  const getVal = (k) => { const x = arr.find(i => String(i.Type).toLowerCase() === k.toLowerCase()); return x ? x.Value : ''; };",
+                  "  const sih = getVal('priv_hash');",
+                  "  if (sih) pm.collectionVariables.set('sih', sih);",
+                  "  const unit = getVal('unit'); if (unit) pm.collectionVariables.set('unit', unit);",
+                  "  const sessionid = getVal('sessionid'); if (sessionid) pm.collectionVariables.set('session', sessionid);",
+                  "  const pub = getVal('pub_hash') || getVal('public_hash'); if (pub) pm.collectionVariables.set('pub_hash', pub);",
+                  "}",
+                  "pm.test('sih extracted from /resource/Me', function(){ pm.expect(pm.collectionVariables.get('sih')).to.be.ok; });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "5) Verify Main Info (stud-api direct)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": "{{stud_api_base}}/main/info?sih={{sih}}",
+            "description": "Validation call after token + sih bootstrap."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Home",
+      "item": [
+        {
+          "name": "Get Current Courses",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/GetStudCurrentCourses?sih={{sih}}",
+            "description": "Observed on #/home."
+          }
+        },
+        {
+          "name": "Get Student News",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/StudNews?sih={{sih}}&curid={{curId}}",
+            "description": "Observed on #/home."
+          }
+        },
+        {
+          "name": "Get Management Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/getManagementStatus?sih={{sih}}",
+            "description": "Observed on #/home."
+          }
+        },
+        {
+          "name": "Notifications",
+          "request": {
+            "method": "GET",
+            "url": "{{tree_base}}/comnity/notification/GetReciveNotification?app=13",
+            "description": "Observed repeatedly across routes."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Student Main",
+      "item": [
+        {
+          "name": "Main Info",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/info?sih={{sih}}",
+            "description": "Observed bootstrap request."
+          }
+        },
+        {
+          "name": "Main Info (with curriculum)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/info?sih={{sih}}&curID={{curId}}",
+            "description": "Observed on transcript flow."
+          }
+        },
+        {
+          "name": "Menu List",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/menulist?sih={{sih}}",
+            "description": "Observed bootstrap request."
+          }
+        },
+        {
+          "name": "Curriculum Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/curriculumGroup?sih={{sih}}&curID={{curId}}",
+            "description": "Observed on #/curriculum and #/graduation."
+          }
+        },
+        {
+          "name": "Upper English",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/upperEnglish?sih={{sih}}&curID={{curId}}",
+            "description": "Observed on #/curriculum and #/graduation."
+          }
+        },
+        {
+          "name": "GPA",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/gpa?sih={{sih}}&curID={{curId}}",
+            "description": "Observed on #/transcript and #/graduation."
+          }
+        },
+        {
+          "name": "Transcripts",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/transcripts?sih={{sih}}&curID={{curId}}",
+            "description": "Observed on #/transcript."
+          }
+        },
+        {
+          "name": "Transcript Statistic",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/transcriptStatistic?sih={{sih}}&curID={{curId}}",
+            "description": "Observed on #/transcript."
+          }
+        },
+        {
+          "name": "Result Words",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/resultwords",
+            "description": "Observed on #/transcript."
+          }
+        },
+        {
+          "name": "Request Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/RequestStatus?sih={{sih}}&curID={{curId}}",
+            "description": "Observed on #/graduation."
+          }
+        },
+        {
+          "name": "Get Manuals",
+          "request": {
+            "method": "GET",
+            "url": "{{support2_base}}/stud/main/getManuals",
+            "description": "Observed on #/manual."
+          }
+        },
+        {
+          "name": "Docs",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/docs",
+            "description": "Observed on #/forms. Treat as potentially action-triggering until validated with supervision."
+          }
+        },
+        {
+          "name": "Current Year",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/currentyr",
+            "description": "Observed on #/payinfo."
+          }
+        },
+        {
+          "name": "Payment Semesters",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/main/getPaymentSemesters",
+            "description": "Observed on #/payinfo."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Schedule",
+      "item": [
+        {
+          "name": "Selection Management Cache",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"catid\": \"redis-get-student-selection-management\",\n  \"isMobile\": false,\n  \"data\": {\n    \"sih\": \"{{sih}}\",\n    \"courseid\": 0,\n    \"curid\": {{curId}},\n    \"hid\": 0\n  }\n}"
+            },
+            "url": "{{support2_base}}/cache/cacheget",
+            "description": "Observed on #/schedselection."
+          }
+        },
+        {
+          "name": "Course Schedule",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/Schedule/CourseSchedule?sih={{sih}}",
+            "description": "Observed on #/courseschedule."
+          }
+        },
+        {
+          "name": "Exam Schedule",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/Schedule/ExamSchedule?sih={{sih}}",
+            "description": "Observed on #/examschedule."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Balance Account",
+      "item": [
+        {
+          "name": "Student Balance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/BalanceAccount/StudBalance?sih={{sih}}&curid={{curId}}&year={{year}}&sem={{sem}}",
+            "description": "Observed on #/payinfo."
+          }
+        },
+        {
+          "name": "Bank Accounts",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/BalanceAccount/bankAccounts?sih={{sih}}",
+            "description": "Observed on #/payinfo and #/studentcard."
+          }
+        },
+        {
+          "name": "Previous Balance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/BalanceAccount/befUldegdel?sih={{sih}}&year={{year}}&sem={{sem}}",
+            "description": "Observed on #/payinfo."
+          }
+        },
+        {
+          "name": "Last Balance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "url": "{{support2_base}}/stud/BalanceAccount/lastUldegdel?sih={{sih}}",
+            "description": "Observed on #/payinfo and #/studentcard."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Student Card",
+      "item": [
+        {
+          "name": "Card List",
+          "request": {
+            "method": "GET",
+            "url": "{{support2_base}}/stud/card/list?sih={{sih}}",
+            "description": "Observed on #/studentcard."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Forms and Reports",
+      "item": [
+        {
+          "name": "Report Types",
+          "request": {
+            "method": "GET",
+            "url": "{{tree_base}}/comnity/Report/Types",
+            "description": "Observed on #/forms."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Student Success",
+      "item": [
+        {
+          "name": "Success S1",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/studsuccess/get/suc1",
+            "description": "Observed on #/success."
+          }
+        },
+        {
+          "name": "Success S2",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/studsuccess/get/suc2",
+            "description": "Observed on #/success."
+          }
+        },
+        {
+          "name": "Success S3",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/studsuccess/get/suc3",
+            "description": "Observed on #/success."
+          }
+        },
+        {
+          "name": "Success S4",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/studsuccess/get/suc4",
+            "description": "Observed on #/success."
+          }
+        },
+        {
+          "name": "Success S5",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/studsuccess/get/suc5",
+            "description": "Observed on #/success."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Top Menus",
+      "item": [
+        {
+          "name": "Top Units",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/topMenus/units?unitid={{unitId}}",
+            "description": "Observed on #/tm_teacher, #/tm_program, #/tm_course, #/tm_course_schedule."
+          }
+        },
+        {
+          "name": "Top Courses",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/topMenus/courses?unitid={{unitId}}",
+            "description": "Observed on #/tm_course_schedule."
+          }
+        },
+        {
+          "name": "Top Schedules",
+          "request": {
+            "method": "POST",
+            "url": "{{support2_base}}/stud/topMenus/TopSchedules?empid={{empId}}&roomid={{roomId}}&courseid={{courseId}}&unitid={{unitId}}",
+            "description": "Observed on #/tm_course_schedule."
+          }
+        }
+      ]
+    },
+    {
+      "name": "E-Journal (Supervised Validation)",
+      "description": "Endpoints discovered from bundle code paths related to journal/details. Do not execute submission-like calls without supervision.",
+      "item": [
+        {
+          "name": "Get Components",
+          "request": {
+            "method": "GET",
+            "url": "{{teach_sisi_base}}/stud/getComponents",
+            "description": "Discovered in bundle. Likely read-only list of assessment components."
+          }
+        },
+        {
+          "name": "Get Journal",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{teach_sisi_base}}/stud/getJournal?priv_hash={{sih}}&acid={{acid}}",
+              "host": [
+                "{{teach_sisi_base}}"
+              ],
+              "path": [
+                "stud",
+                "getJournal"
+              ],
+              "query": [
+                {
+                  "key": "priv_hash",
+                  "value": "{{sih}}"
+                },
+                {
+                  "key": "acid",
+                  "value": "{{acid}}"
+                }
+              ]
+            },
+            "description": "Discovered in bundle. Detail fetch for a selected assessment item."
+          }
+        },
+        {
+          "name": "Study Assessment Partition",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{teach_sisi_base}}/stud/studAssessmentPartition?priv_hash={{sih}}&acid={{acid}}",
+              "host": [
+                "{{teach_sisi_base}}"
+              ],
+              "path": [
+                "stud",
+                "studAssessmentPartition"
+              ],
+              "query": [
+                {
+                  "key": "priv_hash",
+                  "value": "{{sih}}"
+                },
+                {
+                  "key": "acid",
+                  "value": "{{acid}}"
+                }
+              ]
+            },
+            "description": "Discovered in bundle. Loads detailed partition/score breakdown data."
+          }
+        },
+        {
+          "name": "Homework File Submit (Potential Mutation)",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{stud_ejournal_base}}/stud/file?dnum={{daalID}}&cid={{courseid}}&tid=0&sessionid={{session}}",
+              "host": [
+                "{{stud_ejournal_base}}"
+              ],
+              "path": [
+                "stud",
+                "file"
+              ],
+              "query": [
+                {
+                  "key": "dnum",
+                  "value": "{{daalID}}"
+                },
+                {
+                  "key": "cid",
+                  "value": "{{courseid}}"
+                },
+                {
+                  "key": "tid",
+                  "value": "0"
+                },
+                {
+                  "key": "sessionid",
+                  "value": "{{session}}"
+                }
+              ]
+            },
+            "description": "Discovered in bundle. Upload/submit behavior likely. Do not execute unsupervised."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Potential Actions (Do Not Run Unsupervised)",
+      "description": "Potential mutating endpoints discovered by bundle string inspection or naming patterns. These were not intentionally triggered in this pass.",
+      "item": [
+        {
+          "name": "Notification Change State (possible mutation)",
+          "request": {
+            "method": "GET",
+            "url": "{{tree_base}}/comnity/Notification/ChangeState?session={{session}}",
+            "description": "Potential state-changing endpoint from JS bundle string extraction."
+          }
+        },
+        {
+          "name": "Notification Change State App (possible mutation)",
+          "request": {
+            "method": "GET",
+            "url": "{{tree_base}}/comnity/Notification/ChangeStateApp?session={{session}}",
+            "description": "Potential state-changing endpoint from JS bundle string extraction."
+          }
+        },
+        {
+          "name": "Mail Report (possible submit)",
+          "request": {
+            "method": "POST",
+            "url": "{{tree_base}}/comnity/Mail/Report",
+            "description": "Potential submit/report endpoint from JS bundle string extraction."
+          }
+        },
+        {
+          "name": "Journal (undocumented path)",
+          "request": {
+            "method": "GET",
+            "url": "{{phost_base}}/journal",
+            "description": "Observed in JS bundle strings; behavior and parameters not yet confirmed."
+          }
+        },
+        {
+          "name": "Auth Logout",
+          "request": {
+            "method": "GET",
+            "url": "{{auth_base}}/oauth2/account/logout",
+            "description": "Session mutation endpoint."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+flowchart TB
+  student([Оюутан])
+  teacher([Багш])
+  uc1([Ерөнхий мэдээлэл,<br/>мэдэгдэл, хуваарь асуух])
+  uc2([GPA, transcript,<br/>санхүүгийн мэдээлэл харах])
+  uc3([Үзээгүй хичээл,<br/>дараагийн семестр шалгах])
+  uc4([Гаднын MCP систем рүү<br/>өгөгдөл дамжуулах])
+  uc5([Дүнг CSV хэлбэрээр<br/>экспортлох])
+  uc6([Excel файлаас олон<br/>оюутны дүн оруулах])
+
+  student --- uc1
+  student --- uc2
+  student --- uc3
+  student --- uc4
+  student --- uc5
+  teacher --- uc6
+
+  classDef current fill:#eaf7ea,stroke:#2e8b57,color:#000;
+  classDef planned fill:#fff4d6,stroke:#d39d12,color:#000;
+  class uc1,uc2,uc3 current;
+  class uc4,uc5,uc6 planned;

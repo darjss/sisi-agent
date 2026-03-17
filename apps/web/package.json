@@ -1,0 +1,50 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "serve": "vite preview",
+    "start": "vite",
+    "check-types": "tsc --noEmit",
+    "dev:bare": "vite dev"
+  },
+  "dependencies": {
+    "@ai-sdk/react": "^3.0.3",
+    "@base-ui/react": "^1.0.0",
+    "@hookform/resolvers": "^5.1.1",
+    "@sisi-agent/env": "workspace:*",
+    "@tailwindcss/vite": "^4.0.15",
+    "@tanstack/react-form": "^1.12.3",
+    "@tanstack/react-router": "^1.141.1",
+    "ai": "catalog:",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "catalog:",
+    "lucide-react": "^0.473.0",
+    "next-themes": "^0.4.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "shadcn": "^3.6.2",
+    "sonner": "^2.0.5",
+    "streamdown": "^1.6.10",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.2.5",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@sisi-agent/config": "workspace:*",
+    "@tanstack/react-router-devtools": "^1.141.1",
+    "@tanstack/router-plugin": "^1.141.1",
+    "@types/node": "^22.13.14",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "alchemy": "catalog:",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.15",
+    "typescript": "catalog:",
+    "vite": "^6.2.2"
+  }
+}

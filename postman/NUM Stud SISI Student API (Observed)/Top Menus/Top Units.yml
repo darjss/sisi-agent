@@ -1,0 +1,17 @@
+info:
+  name: Top Units
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/topMenus/units?unitid={{unitId}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/tm_teacher, #/tm_program, #/tm_course, #/tm_course_schedule."

@@ -1,0 +1,20 @@
+info:
+  name: Request Status
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/main/RequestStatus?sih={{sih}}&curID={{curId}}"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/graduation."

@@ -1,0 +1,17 @@
+info:
+  name: Journal (undocumented path)
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{phost_base}}/journal"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Observed in JS bundle strings; behavior and parameters not yet confirmed.

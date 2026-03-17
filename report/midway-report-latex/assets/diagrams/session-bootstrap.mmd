@@ -1,0 +1,20 @@
+sequenceDiagram
+  autonumber
+  participant U as Хэрэглэгч
+  participant B as Chrome Extension
+  participant M as Локал MCP сервер
+  participant S as SISI API
+  participant A as AI сервер
+
+  U->>B: Портал нээж өргөтгөл ашиглах
+  B->>B: Идэвхтэй access token / session мэдээлэл авах
+  B->>M: POST /local/session/register
+  M->>S: /resource/Me ашиглан session verify
+  S-->>M: Хүчинтэй profile + SIH
+  M-->>B: sessionId, expiresAt
+  U->>A: Байгалийн хэлний хүсэлт илгээх
+  A->>M: /mcp tool/resource хүсэлт
+  M->>S: Холбогдох endpoint-ууд
+  S-->>M: Бодит өгөгдөл
+  M-->>A: Structured content + raw resource
+  A-->>U: Нэгтгэсэн хариу

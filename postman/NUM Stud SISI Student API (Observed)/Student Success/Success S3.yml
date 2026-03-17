@@ -1,0 +1,17 @@
+info:
+  name: Success S3
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/studsuccess/get/suc3"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/success."

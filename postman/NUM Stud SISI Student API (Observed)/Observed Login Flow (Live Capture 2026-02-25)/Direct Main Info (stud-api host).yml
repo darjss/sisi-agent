@@ -1,0 +1,20 @@
+info:
+  name: Direct Main Info (stud-api host)
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{stud_api_base}}/main/info?sih={{sih}}"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Observed from live session bootstrap on stud-sisi frontend.

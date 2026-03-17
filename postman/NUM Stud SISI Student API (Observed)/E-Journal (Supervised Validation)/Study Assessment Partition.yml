@@ -1,0 +1,24 @@
+info:
+  name: Study Assessment Partition
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{teach_sisi_base}}/stud/studAssessmentPartition?priv_hash={{sih}}&acid={{acid}}"
+  params:
+    - name: priv_hash
+      value: "{{sih}}"
+      type: query
+    - name: acid
+      value: "{{acid}}"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Discovered in bundle. Loads detailed partition/score breakdown data.

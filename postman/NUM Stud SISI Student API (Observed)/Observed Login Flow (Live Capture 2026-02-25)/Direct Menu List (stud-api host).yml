@@ -1,0 +1,20 @@
+info:
+  name: Direct Menu List (stud-api host)
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{stud_api_base}}/main/menulist?sih={{sih}}"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Observed from live session bootstrap on stud-sisi frontend.

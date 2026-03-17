@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "sisi_local_http": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3901/mcp",
+      "enabled": true
+    }
+  }
+}

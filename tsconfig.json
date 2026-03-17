@@ -1,0 +1,3 @@
+{
+  "extends": "@sisi-agent/config/tsconfig.base.json"
+}

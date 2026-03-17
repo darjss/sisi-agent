@@ -1,0 +1,17 @@
+info:
+  name: Auth Step 1 (POST)
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{auth_base}}/oauth2/account/auth"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Observed credential submit/transition step. Returns 302 during normal flow.

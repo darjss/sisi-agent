@@ -1,0 +1,20 @@
+info:
+  name: Docs
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/main/docs"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/forms. Treat as potentially action-triggering until validated with supervision."

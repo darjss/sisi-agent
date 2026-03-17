@@ -1,0 +1,20 @@
+info:
+  name: Get Current Courses
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{support2_base}}/stud/main/GetStudCurrentCourses?sih={{sih}}"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/home."

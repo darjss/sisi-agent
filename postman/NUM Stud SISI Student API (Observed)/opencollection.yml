@@ -1,0 +1,85 @@
+opencollection: 1.0.0
+
+info:
+  name: NUM Stud SISI Student API (Observed)
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: bearer
+    token: "{{token}}"
+  variables:
+    - name: token
+      value: ""
+    - name: sih
+      value: 60aee108-0e40-4df4-8768-6265a06fbd16
+    - name: curId
+      value: ""
+    - name: year
+      value: "2025"
+    - name: sem
+      value: "4"
+    - name: unitId
+      value: "1001000"
+    - name: empId
+      value: "0"
+    - name: roomId
+      value: "0"
+    - name: courseId
+      value: "0"
+    - name: courseid
+      value: "0"
+    - name: acid
+      value: ""
+    - name: daalID
+      value: ""
+    - name: session
+      value: ""
+    - name: support2_base
+      value: https://support2.num.edu.mn/prod/api
+    - name: tree_base
+      value: https://tree.num.edu.mn
+    - name: phost_base
+      value: https://phost.num.edu.mn
+    - name: auth_base
+      value: https://auth.num.edu.mn
+    - name: teach_sisi_base
+      value: https://teach-sisi.num.edu.mn/api
+    - name: stud_ejournal_base
+      value: https://sisi.num.edu.mn/stud-ejournal
+    - name: stud_api_base
+      value: https://stud-api.num.edu.mn
+    - name: authType
+      value: ""
+    - name: returnUrl
+      value: ""
+    - name: clientId
+      value: ""
+    - name: redirectUri
+      value: ""
+    - name: state
+      value: ""
+    - name: scope
+      value: ""
+    - name: responseType
+      value: code
+
+docs:
+  content: Student-account-only API collection captured from https://stud-sisi.num.edu.mn. This collection avoids active submission/upload flows. Use with caution on production student data.
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

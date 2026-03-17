@@ -1,0 +1,33 @@
+info:
+  name: Selection Management Cache
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{support2_base}}/cache/cacheget"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "catid": "redis-get-student-selection-management",
+        "isMobile": false,
+        "data": {
+          "sih": "{{sih}}",
+          "courseid": 0,
+          "curid": {{curId}},
+          "hid": 0
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/schedselection."

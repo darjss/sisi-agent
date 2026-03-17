@@ -1,0 +1,17 @@
+info:
+  name: Report Types
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{tree_base}}/comnity/Report/Types"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: "Observed on #/forms."

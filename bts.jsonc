@@ -1,0 +1,31 @@
+// Better-T-Stack
+//
+// Website: https://www.better-t-stack.dev/
+// Stack Builder: https://www.better-t-stack.dev/new
+// Analytics: https://www.better-t-stack.dev/analytics
+// Showcase: https://www.better-t-stack.dev/showcase
+// Sponsor: https://github.com/sponsors/AmanVarshney01
+//
+// Add new addons with: bun create better-t-stack add
+// This file is safe to delete
+
+{
+  "$schema": "https://r2.better-t-stack.dev/schema.json",
+  "version": "3.19.3",
+  "createdAt": "2026-02-04T07:26:15.647Z",
+  "reproducibleCommand": "bun create better-t-stack@latest sisi-agent --frontend tanstack-router --backend elysia --runtime bun --database postgres --orm drizzle --api none --auth none --payments none --addons turborepo biome oxlint wxt ruler skills --examples ai --db-setup docker --web-deploy cloudflare --server-deploy none --git --package-manager bun --no-install",
+  "database": "postgres",
+  "orm": "drizzle",
+  "backend": "elysia",
+  "runtime": "bun",
+  "frontend": ["tanstack-router"],
+  "addons": ["turborepo", "biome", "oxlint", "wxt", "ruler", "skills"],
+  "examples": ["ai"],
+  "auth": "none",
+  "payments": "none",
+  "packageManager": "bun",
+  "dbSetup": "docker",
+  "api": "none",
+  "webDeploy": "cloudflare",
+  "serverDeploy": "none",
+}

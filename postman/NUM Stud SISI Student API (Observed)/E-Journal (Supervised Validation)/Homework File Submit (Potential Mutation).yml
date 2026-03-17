@@ -1,0 +1,30 @@
+info:
+  name: Homework File Submit (Potential Mutation)
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{stud_ejournal_base}}/stud/file?dnum={{daalID}}&cid={{courseid}}&tid=0&sessionid={{session}}"
+  params:
+    - name: dnum
+      value: "{{daalID}}"
+      type: query
+    - name: cid
+      value: "{{courseid}}"
+      type: query
+    - name: tid
+      value: "0"
+      type: query
+    - name: sessionid
+      value: "{{session}}"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Discovered in bundle. Upload/submit behavior likely. Do not execute unsupervised.
