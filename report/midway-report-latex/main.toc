@@ -1,0 +1,91 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{УДИРТГАЛ}{1}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}СУДАЛГААНЫ ЗОРИЛГО}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Зорилтууд}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Судалгааны зорилтууд}{2}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Техникийн зорилтууд}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Үнэлгээний зорилтууд}{3}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Хүрэх үр дүн}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Хамрах хүрээ}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}СУДАЛГААНЫ ҮНДЭСЛЭЛ}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Асуудлын тодорхойлолт}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Автоматжуулалтын хэрэгцээ}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Хиймэл оюуны одоогийн чадамж ба хязгаарлалт}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Хувийн сэдэлт}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Асуудлын томьёолол}{5}{section.2.5}%
+\contentsline {chapter}{\numberline {3}ОНОЛЫН БОЛОН ХАРЬЦУУЛСАН СУДАЛГАА}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Хиймэл оюуны агентын ойлголт}{7}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}ReAct загвар}{7}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Tool-calling механизм}{7}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Model Context Protocol (MCP)}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}MCP-ийн бүтэц}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Энэхүү төсөлд MCP сонгосон шалтгаан}{8}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Ижил төстэй системүүдийн судалгаа}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Боловсролын AI туслахууд}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Tool-use AI системүүд}{9}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Байгууллагын автоматжуулалтын системүүд}{9}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Харьцуулалтын дүгнэлт}{10}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Судалгааны дүгнэлт}{10}{section.3.4}%
+\contentsline {chapter}{\numberline {4}СИСТЕМИЙН ШИНЖИЛГЭЭ}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Оролцогч талууд}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ашиглалтын хувилбарууд}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Функциональ шаардлага}{13}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Хэрэглэгчийн оролт ба гаралт}{13}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Өгөгдөлд хандалт}{13}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Өргөтгөх чадвар}{14}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Аюулгүй байдал}{14}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Функциональ бус шаардлага}{14}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Аюулгүй байдал}{14}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Өргөтгөх чадвар}{14}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Найдвартай байдал}{14}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Гүйцэтгэл}{14}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Хянах боломж}{15}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.6}Хэрэглэх боломж}{15}{subsection.4.4.6}%
+\contentsline {section}{\numberline {4.5}Эрсдэл ба хязгаарлалт}{15}{section.4.5}%
+\contentsline {chapter}{\numberline {5}СИСТЕМИЙН ЗОХИОМЖ}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Ерөнхий архитектур}{16}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Модулийн бүтэц}{17}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Applications (apps)}{17}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Packages}{17}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Session удирдлага}{18}{section.5.3}%
+\contentsline {section}{\numberline {5.4}MCP хэрэгслүүдийн загвар}{19}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Ирээдүйн өргөтгөлийн загвар}{19}{section.5.5}%
+\contentsline {chapter}{\numberline {6}АШИГЛАХ ТЕХНОЛОГИ}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Хөгжүүлэлтийн хэл}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Model Context Protocol (MCP)}{21}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Chrome Extension}{22}{section.6.3}%
+\contentsline {section}{\numberline {6.4}AI интеграц}{22}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Monorepo бүтэц}{22}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Технологийн стекийн нэгдсэн хүснэгт}{23}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Цаашид нэмэгдэх технологи}{23}{section.6.7}%
+\contentsline {chapter}{\numberline {7}ХЭРЭГЖҮҮЛЭЛТИЙН ЯВЦ БА ЦААШДЫН ТӨЛӨВЛӨГӨӨ}{24}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Одоогийн хэрэгжилтийн төлөв}{24}{section.7.1}%
+\contentsline {section}{\numberline {7.2}MCP серверийн хэрэгжилт}{24}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Chrome Extension-ийн хэрэгжилт}{25}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Завсрын шатны гол үр дүн}{25}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Үлдсэн ажлууд}{25}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ажлын төлөвлөгөө}{26}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Үнэлгээний төлөвлөгөө}{26}{section.7.7}%
+\contentsline {chapter}{ДҮГНЭЛТ}{28}{chapter*.13}%
+\contentsline {chapter}{\numberline {A}АШИГЛАЛТЫН ХУВИЛБАРУУДЫН ДЭЛГЭРЭНГҮЙ ЖАГСААЛТ}{31}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Оюутны талын үндсэн хувилбарууд}{31}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Хуваарь харах}{31}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Дүн харах}{31}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}Төлбөрийн мэдээлэл}{32}{subsection.A.1.3}%
+\contentsline {subsection}{\numberline {A.1.4}Мэдэгдэл харах}{32}{subsection.A.1.4}%
+\contentsline {subsection}{\numberline {A.1.5}Ерөнхий мэдээлэл}{32}{subsection.A.1.5}%
+\contentsline {subsection}{\numberline {A.1.6}Олон мэдээлэл нэг дор}{32}{subsection.A.1.6}%
+\contentsline {section}{\numberline {A.2}Өгөгдөл экспортлох хувилбарууд}{32}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Дүн CSV экспорт}{33}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Хуваарь календарь руу}{33}{subsection.A.2.2}%
+\contentsline {section}{\numberline {A.3}Ерөнхий MCP өргөтгөлийн хувилбарууд}{33}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Даалгавар reminder}{33}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Тэмдэглэл хадгалах}{33}{subsection.A.3.2}%
+\contentsline {section}{\numberline {A.4}Багшийн талын хувилбарууд}{34}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Excel-ээс дүн оруулах}{34}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Дүнгийн тайлан}{34}{subsection.A.4.2}%
+\contentsline {section}{\numberline {A.5}Нарийвчилсан харилцааны хувилбарууд}{34}{section.A.5}%
+\contentsline {subsection}{\numberline {A.5.1}Хичээл санал болгох}{34}{subsection.A.5.1}%
+\contentsline {subsection}{\numberline {A.5.2}Төгсөлтийн шаардлага}{35}{subsection.A.5.2}%
+\contentsline {section}{\numberline {A.6}Тэмдэглэл}{35}{section.A.6}%
+\contentsline {chapter}{Мэргэжлийн нэр томьёоны тайлбар}{36}{appendix*.15}%

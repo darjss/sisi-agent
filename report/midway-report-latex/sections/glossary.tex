@@ -1,62 +1,157 @@
 \chapter*{МЭРГЭЖЛИЙН НЭР ТОМЬЁОНЫ ТАЙЛБАР}
 \addcontentsline{toc}{chapter}{Мэргэжлийн нэр томьёоны тайлбар}
 
+Энэхүү тайланд ашигласан мэргэжлийн нэр томьёог ангиллаар нь бүлэглэж тайлбарлав.
+
+\section*{Хиймэл оюун ба агентын нэр томьёо}
+
 \begin{table}[H]
   \centering
-  \caption{Мэргэжлийн нэр томьёо}
-  \label{tab:glossary}
   \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} X}
     \toprule
     Нэр томьёо & Товч тайлбар \\
     \midrule
-    SISi системийн ухаалаг агент (SISi Intelligent Agent) & SISI порталд суурилсан хиймэл оюуны туслах систем. Хэрэглэгчийн байгалийн хэлний хүсэлтийг бодит системийн үйлдэл болгон хувиргах зориулалттай. \\
-    \addlinespace
-    Model Context Protocol (MCP) & Хиймэл оюуны загварт гадаад хэрэгсэл, өгөгдлийн эх үүсвэрийг стандартчилсан аргаар холбох нээлттэй протокол. tool, resource, prompt гэсэн үндсэн нэгжүүд ашиглана. \\
-    \addlinespace
     AI Agent (Хиймэл оюуны агент) & Хэлний загвар, орчны өгөгдөл, хэрэгслүүд, үйлдлийн урсгалыг нэгтгэсэн ухаалаг систем. Зөвхөн хариу үүсгэх бус, бодит үйлдэл гүйцэтгэх чадвартай. \\
     \addlinespace
-    Tool-calling & Хиймэл оюун бодит системтэй харилцахдаа хэрэгслүүдийг дуудаж, өгөгдөл авах, үйлдэл гүйцэтгэх механизм. \\
+    Large Language Model (LLM) & Их хэмжээний текст өгөгдөл дээр сургагдсан хэлний загвар. Текст үүсгэх, асуултад хариулах, орчуулах зэрэг олон төрлийн даалгавар гүйцэтгэх чадвартай. \\
     \addlinespace
-    MCP Server & Model Context Protocol-ийн стандартад нийцсэн сервер. Гаднын системүүдийг (SISI портал, календарь, баримт бичиг гэх мэт) хиймэл оюунтай холбох давхарга. \\
+    Tool-calling & Хиймэл оюун бодит системтэй харилцахдаа хэрэгслүүдийг дуудаж, өгөгдөл авах, үйлдэл гүйцэтгэх механизм. Function calling гэж нэрлэдэг. \\
     \addlinespace
-    Session Bootstrap & Хэрэглэгчийг дахин нэвтрүүлэхгүйгээр одоогийн access token, cookie ашиглан сесс үүсгэх механизм. \\
+    Tool Orchestration & Олон хэрэгслийг дарааллан эсвэл параллелаар дуудаж, үр дүнг нэгтгэх үйл явц. AI загвар аль хэрэгслийг хэзээ дуудахыг шийддэг. \\
     \addlinespace
-    Access Token & Хэрэглэгчийн системд нэвтэрснийг баталгаажуулж, API хүсэлтийг зөвшөөрөх нууцлалын түлхүүр. \\
+    Prompt & Хиймэл оюуны загварт өгөх заавар, асуулт, эсвэл контекст. Системийн prompt нь загварын үндсэн зан төлөвийг тодорхойлдог. \\
     \addlinespace
-    Read-only Tool & Өгөгдөл унших, харах зориулалттай MCP хэрэгсэл. Mutation үйлдэл хийх боломжгүй. \\
+    Streaming & Загварын хариуг бүрэн үүсгэхийг хүлээлгүй, token бүрийг бодит цагт хэрэглэгчид дамжуулах арга. \\
+    \addlinespace
+    Context Window & Загварт нэг удаад өгч болох текстийн хамгийн их урт. Token-оор хэмжигдэнэ. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section*{Model Context Protocol (MCP) нэр томьёо}
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} X}
+    \toprule
+    Нэр томьёо & Товч тайлбар \\
+    \midrule
+    Model Context Protocol (MCP) & Хиймэл оюуны загварт гадаад хэрэгсэл, өгөгдлийн эх үүсвэрийг стандартчилсан аргаар холбох нээлттэй протокол. Anthropic компаниас боловсруулсан. \\
+    \addlinespace
+    MCP Server & Model Context Protocol-ийн стандартад нийцсэн сервер. Гаднын системүүдийг (SISI портал, календарь, баримт бичиг гэх мэт) хиймэл оюунтай холбох давхарга болж ажилладаг. \\
+    \addlinespace
+    MCP Tool & MCP серверийн ил гаргасан хэрэгсэл. AI загвар энэ хэрэгслийг дуудаж, бодит систем дээр үйлдэл гүйцэтгэдэг. Оролт гаралтын schema-тай. \\
+    \addlinespace
+    MCP Resource & MCP серверээс ил гаргасан өгөгдлийн эх үүсвэр. Tool-оос ялгаатай нь өгөгдлийг шууд унших зориулалттай. \\
+    \addlinespace
+    Read-only Tool & Өгөгдөл унших, харах зориулалттай MCP хэрэгсэл. Системд өөрчлөлт оруулах (mutation) боломжгүй. \\
     \addlinespace
     Mutation & Өгөгдөл бичих, өөрчлөх, устгах зэрэг системд өөрчлөлт оруулах үйлдэл. Баталгаажуулалт шаарддаг. \\
     \addlinespace
+    Transport Layer & MCP сервер ба клиент хоорондын харилцааны давхарга. stdio, HTTP, WebSocket зэрэг хэлбэртэй байж болно. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section*{Системийн архитектурын нэр томьёо}
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} X}
+    \toprule
+    Нэр томьёо & Товч тайлбар \\
+    \midrule
+    SISi системийн ухаалаг агент & SISI порталд суурилсан хиймэл оюуны туслах систем. Хэрэглэгчийн байгалийн хэлний хүсэлтийг бодит системийн үйлдэл болгон хувиргах зориулалттай. \\
+    \addlinespace
+    Orchestration Layer & AI сервер дээр хэрэгслүүдийг дуудах, хариулт үүсгэх үйл явцыг удирдах модуль. AI загвар болон MCP хэрэгслүүдийн хооронд зуучилдаг. \\
+    \addlinespace
+    Session Bootstrap & Хэрэглэгчийг дахин нэвтрүүлэхгүйгээр одоогийн access token, cookie ашиглан сесс үүсгэх механизм. \\
+    \addlinespace
+    Access Token & Хэрэглэгчийн системд нэвтэрснийг баталгаажуулж, API хүсэлтийг зөвшөөрөх нууцлалын түлхүүр. JWT хэлбэртэй байж болно. \\
+    \addlinespace
+    Idle TTL (Time To Live) & Session-ийн идэвхгүй байх хамгийн их хугацаа. Хугацаа дуусвал session автоматаар дуусдаг. \\
+    \addlinespace
+    Confirmation Flow & Эрсдэлтэй үйлдэл (mutation) хийхээс өмнө хэрэглэгчээс дахин баталгаа авах механизм. \\
+    \addlinespace
+    Audit Trail & Mutation үйлдлүүдийн түүх, лог бичлэг. Хэн, хэзээ, ямар үйлдэл хийсэн зэргийг бүртгэдэг. Аюулгүй байдал, хяналтын зориулалттай. \\
+    \addlinespace
+    Domain & Системийн тодорхой чиглэл. Жишээ нь: хуваарь, дүн, санхүү, мэдэгдэл гэх мэт. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section*{Технологийн нэр томьёо}
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} X}
+    \toprule
+    Нэр томьёо & Товч тайлбар \\
+    \midrule
+    TypeScript & JavaScript-ийн дээд багц. Статик төрлийн систем нэмж, хөгжүүлэлтийн явцад алдааг эрт илрүүлдэг. \\
+    \addlinespace
+    React & Хэрэглэгчийн интерфейс бүтээхэд ашиглах frontend сан. Компонент дээр суурилсан архитектуртай. \\
+    \addlinespace
     Chrome Extension & Вэб хөтөчид нэмэлт функц нэмэх програм. Энэхүү төслөөр порталын сессийг авах, хэрэглэгчийн интерфейс харуулахад ашиглана. \\
     \addlinespace
-    Tool Orchestration & Олон хэрэгслийг дарааллан эсвэл параллелаар дуудаж, үр дүнг нэгтгэх үйл явц. \\
+    WXT & Орчин үеийн Chrome extension хөгжүүлэх фреймворк. Hot Module Replacement, TypeScript, Manifest V3 дэмждэг. \\
     \addlinespace
-    Domain & Системийн тодорлхой чиглэл (хуваарь, дүн, санхүү гэх мэт). \\
+    Vercel AI SDK & Хиймэл оюуны загваруудтай ажиллах TypeScript сан. Streaming, tool calling, олон загварын дэмжлэгтэй. \\
     \addlinespace
-    Prompt & Хиймэл оюуны загварт өгөх заавар, асуулт, эсвэл контекст. \\
+    MCP TypeScript SDK & Model Context Protocol-д нийцсэн сервер хөгжүүлэх албан ёсны TypeScript сан. Anthropic-ээс боловсруулсан. \\
     \addlinespace
-    Orchestration Layer & AI сервер дээр хэрэгслүүдийг дуудах, хариулт үүсгэх үйл явцыг удирдах модуль. \\
+    Turborepo & Monorepo удирдах хэрэгсэл. Олон апп, package-ийг нэг кодын сангаас зохицуулна. Task caching, parallel execution дэмждэг. \\
     \addlinespace
-    Audit Trail & Mutation үйлдлүүдийн түүх, лог бичлэг. Аюулгүй байдал, хяналтын зориулалттай. \\
+    Monorepo & Олон төсөл, package-ийг нэг Git repository-д хадгалах арга. Код хуваалцах, хамааралыг удирдахад тохиромжтой. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section*{API ба интеграцын нэр томьёо}
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} X}
+    \toprule
+    Нэр томьёо & Товч тайлбар \\
+    \midrule
+    API (Application Programming Interface) & Системүүд хоорондоо өгөгдөл солилцох, харилцах протокол. REST, GraphQL зэрэг хэлбэртэй байж болно. \\
     \addlinespace
-    Confirmation Flow & Эрсдэлтэй үйлдэл хийхээс өмнө хэрэглэгчээс дахин баталгаа авах механизм. \\
+    REST API & HTTP протокол дээр суурилсан API загвар. URL endpoint, HTTP method (GET, POST, PUT, DELETE) ашигладаг. \\
     \addlinespace
-    Workflow & Олон алхамт үйлдлүүдийн дараалал. Жишээ нь: Excel файлаас дүн оруулах. \\
+    Endpoint & API-ийн тодорхой хаяг. Тухайн хаяг руу хүсэлт илгээж өгөгдөл авах эсвэл үйлдэл хийдэг. \\
     \addlinespace
-    API (Application Programming Interface) & Системүүд хоорондоо өгөгдөл солилцох протокол. \\
+    Webhook & Нэг систем нөгөө систем рүү автоматаар мэдэгдэл илгээх механизм. Event-driven интеграцад ашиглагддаг. \\
     \addlinespace
-    Elysia & TypeScript хэл дээр бичигдсэн хөнгөн жинтэй вэб фреймворк. \\
+    OAuth 2.0 & Гадаад үйлчилгээнд хандах зөвшөөрөл авах стандарт протокол. Хэрэглэгч нууц үгээ өгөхгүйгээр апп-д хязгаарлагдмал эрх олгодог. \\
     \addlinespace
-    React & Хэрэглэгчийн интерфейс бүтээхэд ашиглах frontend сан. \\
+    JSON (JavaScript Object Notation) & Өгөгдөл солилцоход ашиглах хөнгөн формат. Key-value хос хэлбэртэй. \\
     \addlinespace
-    Bun & JavaScript/TypeScript код ажиллуулах шинэ runtime. Хурдан, хөнгөн. \\
+    Zod & TypeScript-д зориулсан schema validation сан. Runtime validation болон type inference хоёуланг хангадаг. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section*{Хэрэглэгчийн туршлагын нэр томьёо}
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} X}
+    \toprule
+    Нэр томьёо & Товч тайлбар \\
+    \midrule
+    Natural Language Interface & Хэрэглэгч байгалийн хэлээр (Монгол, Англи) системтэй харилцах интерфейс. Команд, товчлуурын оронд бичих, ярих хэлбэртэй. \\
     \addlinespace
-    Turborepo & Monorepo удирдах хэрэгсэл. Олон апп, package-ийг нэг кодын сангаас зохицуулна. \\
+    Use Case (Ашиглалтын хувилбар) & Хэрэглэгчийн системтэй харилцах тодорхой сценари. Хэрэглэгчийн зорилго, системийн хариу үйлдлийг тодорхойлдог. \\
     \addlinespace
-    Drizzle ORM & TypeScript-д зориулсан өгөгдлийн сантай харилцах сан. \\
+    User Flow & Хэрэглэгч системд тодорхой зорилгод хүрэхийн тулд гүйцэтгэх алхмуудын дараалал. \\
+    \addlinespace
+    Workflow & Олон алхамт үйлдлүүдийн дараалал. Жишээ нь: Excel файлаас дүн оруулах workflow. \\
+    \addlinespace
+    Popup & Chrome extension-ийн интерфейс. Extension-ийн icon дээр дарахад гарч ирдэг жижиг цонх. \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
 \vspace{1cm}
-\noindent\textbf{Тэмдэглэл:} Энэхүү тайландаа анх удаа гарч буй мэргэжлийн нэр томьёог товч тайлбартай хамт оруулсан. Давтагдах үед хэвээрээ англи нэр томьёог ашиглана.
+\noindent\textbf{Тэмдэглэл:} Энэхүү тайланд анх удаа гарч буй мэргэжлийн нэр томьёог товч тайлбартай хамт оруулсан. Давтагдах үед хэвээрээ англи нэр томьёог ашиглана. Зарим нэр томьёо нь олон улсын стандарт бөгөөд орчуулахгүй хэвээр үлдээсэн (жишээ нь: API, JSON, OAuth).

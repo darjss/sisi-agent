@@ -1,0 +1,72 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Anthropic}(2024{\natexlab{a}})]{mcp-intro}
+{Anthropic}.
+\newblock Introduction - model context protocol.
+\newblock \url{https://modelcontextprotocol.io/introduction},
+  2024{\natexlab{a}}.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[{Anthropic}(2024{\natexlab{b}})]{mcp-spec}
+{Anthropic}.
+\newblock Model context protocol specification.
+\newblock \url{https://spec.modelcontextprotocol.io/}, 2024{\natexlab{b}}.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[{Carnegie Learning}(2024)]{carnegie-learning}
+{Carnegie Learning}.
+\newblock Mathia: Ai-powered math learning software.
+\newblock \url{https://www.carnegielearning.com/solutions/math/mathia/}, 2024.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[{Intercom}(2024)]{intercom-fin}
+{Intercom}.
+\newblock Fin ai agent.
+\newblock \url{https://www.intercom.com/fin}, 2024.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[{OpenAI}(2024{\natexlab{a}})]{openai-actions}
+{OpenAI}.
+\newblock Gpt actions.
+\newblock \url{https://platform.openai.com/docs/actions}, 2024{\natexlab{a}}.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[{OpenAI}(2024{\natexlab{b}})]{openai-functions}
+{OpenAI}.
+\newblock Function calling.
+\newblock \url{https://platform.openai.com/docs/guides/function-calling},
+  2024{\natexlab{b}}.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[Russell and Norvig(2020)]{russell-norvig}
+Stuart Russell and Peter Norvig.
+\newblock \emph{Artificial Intelligence: A Modern Approach}.
+\newblock Pearson, 4th edition, 2020.
+\newblock ISBN 978-0134610993.
+
+\bibitem[{Vercel}(2024)]{vercel-ai-sdk}
+{Vercel}.
+\newblock Ai sdk documentation.
+\newblock \url{https://sdk.vercel.ai/docs}, 2024.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[{WXT}(2024)]{wxt}
+{WXT}.
+\newblock Wxt: Next-gen web extension framework.
+\newblock \url{https://wxt.dev/}, 2024.
+\newblock Хандсан: 2026-03-17.
+
+\bibitem[Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao]{react-paper}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan,
+  and Yuan Cao.
+\newblock React: Synergizing reasoning and acting in language models.
+\newblock \emph{arXiv preprint arXiv:2210.03629}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2210.03629}.
+
+\end{thebibliography}

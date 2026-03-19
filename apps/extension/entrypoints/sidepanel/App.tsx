@@ -1,13 +1,13 @@
-import { MockChatPanel } from "@/components/mock-chat-panel";
+import { ChatPanel } from "@/components/chat-panel";
 
 function App() {
-  return (
-    <MockChatPanel
-      badgeLabel="Sidebar"
-      shellClassName="sidepanel-root"
-      subtitle="Browser side panel mock, not a page overlay."
-    />
-  );
+	return (
+		<ChatPanel
+			badgeLabel="Sidebar"
+			shellClassName="sidepanel-root"
+			subtitle="Browser side panel real transport"
+		/>
+	);
 }
 
 export default App;

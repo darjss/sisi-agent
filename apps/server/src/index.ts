@@ -5,28 +5,28 @@ import { env } from "@sisi-agent/env/server";
 import { convertToModelMessages, streamText, wrapLanguageModel } from "ai";
 import { Elysia } from "elysia";
 
-const app = new Elysia()
-  .use(
-    cors({
-      origin: env.CORS_ORIGIN,
-      methods: ["GET", "POST", "OPTIONS"],
-    }),
-  )
-  .post("/ai", async (context) => {
-    const body = await context.request.json();
-    const uiMessages = body.messages || [];
-    const model = wrapLanguageModel({
-      model: google("gemini-2.5-flash"),
-      middleware: devToolsMiddleware(),
-    });
-    const result = streamText({
-      model,
-      messages: await convertToModelMessages(uiMessages),
-    });
+export const app = new Elysia()
+	.use(
+		cors({
+			origin: env.CORS_ORIGIN,
+			methods: ["GET", "POST", "OPTIONS"],
+		}),
+	)
+	.post("/ai", async (context) => {
+		const body = (await context.request.json()) as { messages?: any[] };
+		const uiMessages = body.messages || [];
+		const model = wrapLanguageModel({
+			model: google("gemini-2.5-flash"),
+			middleware: devToolsMiddleware(),
+		});
+		const result = streamText({
+			model,
+			messages: await convertToModelMessages(uiMessages),
+		});
 
-    return result.toUIMessageStreamResponse();
-  })
-  .get("/", () => "OK")
-  .listen(3000, () => {
-    console.log("Server is running on http://localhost:3000");
-  });
+		return result.toUIMessageStreamResponse();
+	})
+	.get("/", () => "OK")
+	.listen(3000, () => {
+		console.log("Server is running on http://localhost:3000");
+	});
